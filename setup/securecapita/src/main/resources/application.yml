@@ -1,0 +1,44 @@
+jwt:
+  secret: '[a-zA-Z0-9._]^+$Guidelines89797987forAlphabeticalArraNumeralsandOtherSymbo$'
+
+server:
+
+port: 7070
+error:
+whitelabel:
+enabled: false
+
+spring:
+  #  autoconfigure:
+  #    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/securecapita
+    password: caroline_654321
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8DBDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        globally_quoted_indentifiers: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+
+    spring:
+      servlet:
+        multipart:
+          enabled: true
+
+
+
+          file-size-threshold: 2KB
+          max-file-size: 200MB
+          max-request-size: 215MB
+  sql:
+    init:
+      mode: never
+      continue-on-error: false
